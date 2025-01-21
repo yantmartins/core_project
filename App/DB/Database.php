@@ -62,6 +62,19 @@ class Database{
         return $this->execute($query)->fetchAll();
     }
 
+    public function update($where,$values){
+        //parametro $where (id_table = 4) / parametro $values array com os dados que vao ser atualizados
+        $fields = array_keys($values);
+        $param = array_values($values); //os params são os Valores do array que vieram como parametro
+        //montar a Query
+        $query = 'UPDATE ' .$this->table.' SET ' .implode('=?,',$fields).'=? WHERE '.$where;
+
+        $res = $this->execute($query,$param);
+        if($res){
+            return true;
+        }
+    }
+
     public function delete($where){
         //montar query
         $query = 'DELETE FROM ' .$this->table.' WHERE '.$where;

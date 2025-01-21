@@ -3,22 +3,45 @@
 require './App/DB/Database.php';
 $banco = new Database('categoria');
 
-
+//SELECIONA TODOS OS DADOS DO BANCO
  $dados_banco = $banco->select();
 
+ //PRINTA TODOS OS DADOS DO BANCO
  foreach($dados_banco as $linha){
     echo $linha['id_categoria'] .' ' . $linha['descricao']. ' ' . $linha['cor']. ' ' .$linha['icone'];
-    echo '<br>';
-}
+     echo '<br>';
+ }
+ echo '<br>';
 
-$id = 4;
-$res = $banco->delete('id_categoria = ' .$id);
+ $id = 11;
+ $dados_para_atualizar = $banco->select('id_categoria = ' . $id[0]);
 
-if($res == 1){
-    echo '<br>DELETADO COM SUCESSO';
-} else{
-    echo '<br>ERRO AO DELETAR ';    
-}
+ $nome = $dados_para_atualizar['descricao'];
+
+$novo_nome = "CHOPERIA";
+$dados_para_atualizar['descricao'] = $novo_nome;
+
+$parametro1 = "id_categoria =11";
+$res = $banco->update($parametro1,$dados_para_atualizar);
+
+
+
+
+
+
+//  foreach($dados_banco as $linha){
+//     echo $linha['id_categoria'] .' ' . $linha['descricao']. ' ' . $linha['cor']. ' ' .$linha['icone'];
+//     echo '<br>';
+// }
+
+// $id = 4;
+// $res = $banco->delete('id_categoria = ' .$id);
+
+// if($res == 1){
+//     echo '<br>DELETADO COM SUCESSO';
+// } else{
+//     echo '<br>ERRO AO DELETAR ';    
+// }
     
 // // print_r($dados_banco);
 
