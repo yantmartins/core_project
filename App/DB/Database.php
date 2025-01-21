@@ -65,18 +65,13 @@ class Database{
     public function delete($where){
         //montar query
         $query = 'DELETE FROM ' .$this->table.' WHERE '.$where;
+        $result = $this->execute($query);        
         
-        //DEBUG
-        //echo $query;
-        //exit;
-
-        $result = $this->execute($query);
-        if($result){
-            return true;
+        if($result->rowCount() == 0){
+            return 'ERRO';
         }else{
-            return false;
+            return true;
         }
-        return $result;
     }
 }
 

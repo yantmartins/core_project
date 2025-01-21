@@ -11,13 +11,13 @@ $banco = new Database('categoria');
     echo '<br>';
 }
 
-$id = 1;
+$id = 4;
 $res = $banco->delete('id_categoria = ' .$id);
 
-if($res){
+if($res == 1){
     echo '<br>DELETADO COM SUCESSO';
 } else{
-    echo '<br>ERRO AO DELETAR';
+    echo '<br>ERRO AO DELETAR ';    
 }
     
 // // print_r($dados_banco);
