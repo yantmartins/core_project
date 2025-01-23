@@ -4,7 +4,7 @@ require '../DB/Database.php';
 
 class Colabora{
 
-    public int $id;
+    public int $id_colab;
     public string $nome;
     public string $email;
     public string $fone;
@@ -46,3 +46,14 @@ $result = $colab->cadastrar();
 
 echo '<br>';
 echo $result;
+
+$colaboradores = $colab->buscar();
+
+echo '<pre>';
+print_r($colaboradores);
+echo '</pre>';
+
+foreach($colaboradores as $func){
+    echo 'ID:'.$func->id_colab. ' | '. $func->nome . ' | ' .$func->email . ' | ' .$func->fone;
+    echo '<br>';
+}
