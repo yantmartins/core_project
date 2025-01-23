@@ -62,6 +62,17 @@ class Database{
         return $this->execute($query)->fetchAll();
     }
 
+    public function select_by_id($where = null,$order = null,$limit = null,$fields = '*'){
+
+        $where = strlen($where) ? 'WHERE '.$where : '';
+        $order = strlen($order) ? 'ORDER BY '.$order : '';
+        $limit = strlen($limit) ? 'LIMIT '.$limit : '';
+
+        $query = 'SELECT '.$fields.' FROM '.$this->table .' '.$where;
+
+        return $this->execute($query)->fetch(PDO::FETCH_ASSOC);
+    }
+
     public function update($where,$values){
         //parametro $where (id_table = 4) / parametro $values array com os dados que vao ser atualizados
         $fields = array_keys($values);

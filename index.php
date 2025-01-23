@@ -6,23 +6,43 @@ $banco = new Database('categoria');
 //SELECIONA TODOS OS DADOS DO BANCO
  $dados_banco = $banco->select();
 
- //PRINTA TODOS OS DADOS DO BANCO
- foreach($dados_banco as $linha){
-    echo $linha['id_categoria'] .' ' . $linha['descricao']. ' ' . $linha['cor']. ' ' .$linha['icone'];
-     echo '<br>';
- }
- echo '<br>';
+foreach($dados_banco as $pessoa){
+    echo $pessoa['descricao'];
+    echo '<br>';
+}
 
- $id = 11;
- $dados_para_atualizar = $banco->select('id_categoria = ' . $id[0]);
+ $cat_atualizar = $banco->select_by_id('id_categoria = 10');
 
- $nome = $dados_para_atualizar['descricao'];
+ print_r($cat_atualizar); 
+//Capturando os dados do formulário
+$nova_descricao = "HAMBURGERS";
+$cat_atualizar['descricao'] = $nova_descricao;
+$cat_atualizar['cor'] = 'MARROM';
+$cat_atualizar['icone'] = 'H';
 
-$novo_nome = "CHOPERIA";
-$dados_para_atualizar['descricao'] = $novo_nome;
+$atualizar = $banco->update('id_categoria = 10',$cat_atualizar);
+ 
 
-$parametro1 = "id_categoria =11";
-$res = $banco->update($parametro1,$dados_para_atualizar);
+//  echo '<pre>';
+//  print_r($dados_banco);
+//  echo '</pre>';
+//  //PRINTA TODOS OS DADOS DO BANCO
+//  foreach($dados_banco as $linha){
+//     echo $linha['id_categoria'] .' ' . $linha['descricao']. ' ' . $linha['cor']. ' ' .$linha['icone'];
+//      echo '<br>';
+//  }
+//  echo '<br>';
+
+//  $id = 11;
+//  $dados_para_atualizar = $banco->select('id_categoria = ' . $id[0]);
+
+//  $nome = $dados_para_atualizar['descricao'];
+
+// $novo_nome = "CHOPERIA";
+// $dados_para_atualizar['descricao'] = $novo_nome;
+
+// $parametro1 = "id_categoria =11";
+// $res = $banco->update($parametro1,$dados_para_atualizar);
 
 
 
