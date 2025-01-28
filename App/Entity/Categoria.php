@@ -21,9 +21,30 @@ class Categoria{
             );
         return true;    
     }
+
     public function buscar($where = null,$order = null,$limit = null){
 
         return (new Database('categoria'))->select($where,$order,$limit)->fetchAll(PDO::FETCH_CLASS,self::class);
+    }
+    
+    public function buscar_por_id($id){
+        $db = new Database('categoria'); 
+        $where = 'id_categoria ='.$id;
+        $res = $db->select($where)->fetchObject(self::class);
+        return  $res;        
+    }
+
+    public function atualizar(){
+        $db = new Database('categoria');
+        $res = $db->update(
+            'id_categoria ='.$this->id_categoria,
+            [
+                "descricao" => $this->descricao,
+                "cor" => $this->cor,
+                "icone" => $this->icone,
+            ]
+            );
+            return $res;
     }
     public function excluir(){
         //O comando abaixo instancia o banco e conecta com a tabela nele
@@ -35,18 +56,18 @@ class Categoria{
 
 
 }
-$objCate = new Categoria();
-$objCate->id_categoria = 15;
+// $objCate = new Categoria();
+// $objCate->id_categoria = 15;
 
-$retorno = $objCate->excluir();
+// $retorno = $objCate->excluir();
 
-if($retorno == "ERRO"){
-    echo 'Excluído com sucesso!';
-}else{
-    echo 'ERRO!!!';
-}
+// if($retorno == "ERRO"){
+//     echo 'Excluído com sucesso!';
+// }else{
+//     echo 'ERRO!!!';
+// }
 
-$objCate->excluir();
+// $objCate->excluir();
 
 // $cate = new Categoria();
 // $cate->descricao = 'ESTETICA';

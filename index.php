@@ -1,5 +1,6 @@
 <?php
-echo 'Oi';
+
+require './App/Entity/Colaboradores.php';
 ?>
 
 <!DOCTYPE html>

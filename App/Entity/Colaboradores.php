@@ -1,6 +1,6 @@
 <?php
 
-require '../DB/Database.php';
+require './App/DB/Database.php';
 
 class Colabora{
 
@@ -62,21 +62,22 @@ class Colabora{
 
 }
 
-$objUser = new Colabora();
 
-$enzo = $objUser->buscar_por_id(6);
-print_r($enzo);
+// $objUser = new Colabora();
 
-$enzo->nome = "Arimura ENZOS";
-$enzo->email = "takaronomuro@gmail.com";
+// $enzo = $objUser->buscar_por_id(6);
+// print_r($enzo);
 
-echo '<br>';
-print_r($enzo);
+// $enzo->nome = "Arimura ENZOS";
+// $enzo->email = "takaronomuro@gmail.com";
 
-$enzo_atual = $enzo->atualizar();
+// echo '<br>';
+// print_r($enzo);
 
-echo '<br>';
-echo $enzo_atual;
+// $enzo_atual = $enzo->atualizar();
+
+// echo '<br>';
+// echo $enzo_atual;
 
 
 
