@@ -25,31 +25,50 @@ class Categoria{
 
         return (new Database('categoria'))->select($where,$order,$limit)->fetchAll(PDO::FETCH_CLASS,self::class);
     }
+    public function excluir(){
+        //O comando abaixo instancia o banco e conecta com a tabela nele
+        $db = new Database('categoria');
+        $where = 'id_categoria ='.$this->id_categoria;
+        $res = $db->delete($where); //Instanciar o objeto com o ID de quem vai ser deletado
+        return $res;
+    }
 
 
 }
+$objCate = new Categoria();
+$objCate->id_categoria = 15;
 
-$cate = new Categoria();
-$cate->descricao = 'ESTETICA';
-$cate->cor = 'FUCSIA';
-$cate->icone = 'J';
+$retorno = $objCate->excluir();
 
-echo '<pre>';
-print_r($cate);
-echo '</pre>';
-
-$result = $cate->cadastrar();
-
-echo '<br>';
-echo $result;
-
-$categorias = $cate->buscar();
-
-echo '<pre>';
-print_r($categorias);
-echo '</pre>';
-
-foreach($categorias as $categ){
-    echo 'ID:'.$categ->id_categoria. ' | '. $categ->descricao . ' | ' .$categ->cor . ' | ' .$categ->icone;
-    echo '<br>';
+if($retorno == "ERRO"){
+    echo 'Excluído com sucesso!';
+}else{
+    echo 'ERRO!!!';
 }
+
+$objCate->excluir();
+
+// $cate = new Categoria();
+// $cate->descricao = 'ESTETICA';
+// $cate->cor = 'FUCSIA';
+// $cate->icone = 'J';
+
+// echo '<pre>';
+// print_r($cate);
+// echo '</pre>';
+
+// $result = $cate->cadastrar();
+
+// echo '<br>';
+// echo $result;
+
+// $categorias = $cate->buscar();
+
+// echo '<pre>';
+// print_r($categorias);
+// echo '</pre>';
+
+// foreach($categorias as $categ){
+//     echo 'ID:'.$categ->id_categoria. ' | '. $categ->descricao . ' | ' .$categ->cor . ' | ' .$categ->icone;
+//     echo '<br>';
+// }
