@@ -62,7 +62,6 @@ class Colabora{
 
 }
 
-
 // $objUser = new Colabora();
 
 // $enzo = $objUser->buscar_por_id(6);
