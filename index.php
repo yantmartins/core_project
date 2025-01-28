@@ -1,10 +1,29 @@
 <?php
 
 require './App/Entity/Colaboradores.php';
+
+if(isset($_POST['cadastrar'])){
+    
+    $nome = $_POST['nome'];
+    $email = $_POST['email'];
+    $fone = $_POST['fone'];
+
+    $objColab = new Colabora();
+    $objColab->nome = $nome;
+    $objColab->email = $email;
+    $objColab->fone = $fone;
+
+    $res = $objColab->cadastrar();
+    if($res){
+        echo '<script> alert("Cadastrado com sucesso!")</script>';
+    }else{
+        echo '<script> alert("ERROR")</script>';
+    }
+}
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
