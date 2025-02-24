@@ -8,6 +8,7 @@ class Colabora{
     public string $nome;
     public string $email;
     public string $fone;
+    public string $foto;
 
     public function cadastrar(){
         //O comando abaixo instancia o banco e conecta com a tabela nele
@@ -16,11 +17,12 @@ class Colabora{
         //chama a função insert do banco e passa o Array como parametro
         $res = $db->insert(
             [
-                'nome'=>$this->nome,
-                'email'=>$this->email,
-                'fone'=>$this->fone,
+                'nome'=> $this->nome,
+                'email'=> $this->email,
+                'fone' => $this->fone,
+                'foto' => $this->foto
             ]
-            );
+        );
         return $res;    
     }
 
@@ -61,61 +63,3 @@ class Colabora{
     }
 
 }
-
-// $objUser = new Colabora();
-
-// $enzo = $objUser->buscar_por_id(6);
-// print_r($enzo);
-
-// $enzo->nome = "Arimura ENZOS";
-// $enzo->email = "takaronomuro@gmail.com";
-
-// echo '<br>';
-// print_r($enzo);
-
-// $enzo_atual = $enzo->atualizar();
-
-// echo '<br>';
-// echo $enzo_atual;
-
-
-
-// $objColab = new Colabora();
-// $objColab->id_colab = 5;
-
-// $retorno = $objColab->excluir();
-
-// if($retorno == "ERRO"){
-//     echo 'Excluído com sucesso!';
-// }else{
-//     echo 'ERRO!!!';
-// }
-
-// $objColab->excluir();
-
-// print_r($objColab);
-
-// $colab = new Colabora();
-// $colab->nome = "Yan Torres";
-// $colab->email = "yantmartins@live.com";
-// $colab->fone = "6799999999999";
-
-// echo '<pre>';
-// print_r($colab);
-// echo '</pre>';
-
-// $result = $colab->cadastrar();
-
-// echo '<br>';
-// echo $result;
-
-// $colaboradores = $colab->buscar();
-
-// echo '<pre>';
-// print_r($colaboradores);
-// echo '</pre>';
-
-// foreach($colaboradores as $func){
-//     echo 'ID:'.$func->id_colab. ' | '. $func->nome . ' | ' .$func->email . ' | ' .$func->fone;
-//     echo '<br>';
-// }
