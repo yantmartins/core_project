@@ -16,7 +16,7 @@ if(isset($_POST['cadastrar'])){
     $novo_nome = uniqid();
     $extensao = strtolower(pathinfo($nome_foto, PATHINFO_EXTENSION));
 
-    if ($extensao != 'png' && $extensao != 'jpg') die ("Extensão do arquivo inválida");
+    if ($extensao != 'png' && $extensao != 'jpg' && $extensao != 'jfif') die ("Extensão do arquivo inválida");
     $caminho = $pasta . $novo_nome . '.' .$extensao;
     $foto = move_uploaded_file($arquivo['tmp_name'], $caminho);
 

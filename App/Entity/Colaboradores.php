@@ -59,7 +59,7 @@ class Colabora{
         $db = new Database('colabora');
         $where = 'id_colab ='.$this->id_colab;//Instanciar o objeto com o ID de quem vai ser deletado
         $res = $db->delete($where); //Delete chamando a classe where que chamou o ID a ser deletado
-        return $res->rowCount();
+        return $res;
     }
 
 }

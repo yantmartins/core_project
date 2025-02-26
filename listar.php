@@ -39,10 +39,10 @@ $colaboradores = $colabs->buscar();
                 <td> '. $colaborador->id_colab .' </td>
                 <td> <img id="foto_perfil" src="' . $colaborador->foto . '"> </td>
                 <td> '. $colaborador->nome .' </td>
-                <td> '. $colaborador->email .' </td>
                 <td> '. $colaborador->fone .' </td>
-                <td> <a href="./editar_colab.php?id=" '. $colaborador->id_colab . '"> Editar </a> </td>
-                <td> <a href="./excluir_colab.php?id=" '. $colaborador->id_colab . '"> Excluir </a> </td>
+                <td> '. $colaborador->email .' </td>
+                <td> <a href="./editar_colab.php?id_colab='. $colaborador->id_colab . '"> Editar </a> </td>
+                <td> <a href="./excluir_colab.php?id_colab='. $colaborador->id_colab . '"> Excluir </a> </td>
             </tr>
             ';
             }
