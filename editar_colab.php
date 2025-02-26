@@ -21,7 +21,9 @@ if(isset($_POST['editar'])){
 
     $res = $colab->atualizar();
     if($res){
-        echo '<script> alert("Editado com sucesso!") </script>';
+        echo '<script> alert("Editado com sucesso!");
+        window.location.href = "./listar.php"; </script>';
+        exit;
     }else{
         echo '<script> alert("Error!") </script>';
     }
@@ -40,9 +42,9 @@ if(isset($_POST['editar'])){
     <form method="POST">
         <input type="text" id="nome" name="nome" value="<?=$colab->nome;?>" >
         <br>
-        <input type="text" id="email" name="email" value="<?=$colab->email;?>" >
+        <input type="email" id="email" name="email" value="<?=$colab->email;?>" >
         <br>
-        <input type="text" id="fone" name="fone" value="<?=$colab->fone;?>" >
+        <input type="number" id="fone" name="fone" value="<?=$colab->fone;?>" >
         <br>
 
         <input type="file" id="foto" name="foto">
