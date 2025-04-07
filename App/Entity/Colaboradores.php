@@ -8,7 +8,7 @@ class Colabora{
     public string $nome;
     public string $email;
     public string $fone;
-    public string $foto;
+    // public string $foto;
 
     public function cadastrar(){
         //O comando abaixo instancia o banco e conecta com a tabela nele
@@ -20,7 +20,7 @@ class Colabora{
                 'nome'=> $this->nome,
                 'email'=> $this->email,
                 'fone' => $this->fone,
-                'foto' => $this->foto
+                // 'foto' => $this->foto
             ]
         );
         return $res;    
