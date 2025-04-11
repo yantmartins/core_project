@@ -1,7 +1,21 @@
 let bot = document.getElementById("buscar");
-
+let nome = document.getElementById("nome");
+let cpf = document.getElementById("cpf").value;
+let email = document.getElementById("email").value;
+let cidade = document.getElementById("cidade").value;
 let modal = document.getElementById("modal");
 let bot_cadastrar = document.getElementById('cadastrar');
+let texto = document.getElementById("texto");
+
+
+let forms = document.getElementById("formulario");
+
+nome.addEventListener('keypress', (event) =>{
+
+    texto.innerText = nome.value;
+
+
+});
 
 function chamaModal(){
     modal.classList.remove("oculta");
@@ -11,16 +25,13 @@ function chamaModal(){
 bot_cadastrar.addEventListener('click', (event) => {
     event.preventDefault();
 
-    let nome = document.getElementById("nome").value;
-    let cpf = document.getElementById("cpf").value;
-    let email = document.getElementById("email").value;
-    let cidade = document.getElementById("cidade").value;
+    
 
     console.log(nome);
     console.log(cpf);
     console.log(email);
     console.log(cidade);
-    
+
     chamaModal();
 })
 

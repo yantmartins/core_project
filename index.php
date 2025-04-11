@@ -69,6 +69,9 @@ if(isset($_POST['cadastrar'])){
     <form id="formulario" method="POST" enctype='multipart/form-data'>
         <input type="text" id="nome" name="nome" placeholder="Digite seu nome">
         <br>
+
+        <span id="texto"></span>
+        <br>
         <input type="text" id="cpf" name="cpf" placeholder="Digite seu CPF">
         <br>
         <input type="text" id="email" name="email" placeholder="Digite seu email">
@@ -97,6 +100,6 @@ if(isset($_POST['cadastrar'])){
     </dialog>        
     <!-- <script src="./js/script.js"></script> -->
     <!-- <script src="./js/script2.js"></script> -->
-    <script src="./js/sextou.js"></script>
+    <script src="./js/sextou2.js"></script>
 </body>
 </html>
