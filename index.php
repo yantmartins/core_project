@@ -51,11 +51,18 @@ if(isset($_POST['cadastrar'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
     
 </head>
 <body>
+
     <div id="minhadiv">
         <h1 id="titulo">Cadastro de colaboradores</h1>
+    </div>
+
+    <div id="ibge">
+        <button id="buscar" class="btn_buscar">Buscar Dados</button>
+        <br><br>
     </div>
     
 
@@ -78,6 +85,16 @@ if(isset($_POST['cadastrar'])){
         <input type="submit" name="cadastrar" id="cadastrar" value="Cadastrar">
     </form>
 
+    <dialog open id="modal" class="oculta">
+        <form method="dialog" id="form_modal">
+            <section>
+                <p> Cadastrado com sucesso!!! </p>
+            </section>
+            <section>
+            <button type="submit">OK</button>
+            </section>    
+        </form>
+    </dialog>        
     <!-- <script src="./js/script.js"></script> -->
     <!-- <script src="./js/script2.js"></script> -->
     <script src="./js/sextou.js"></script>
