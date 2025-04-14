@@ -1,6 +1,6 @@
 <?php
 
-require './App/DB/Database.php';
+require '../App/DB/Database.php';
 
 class Categoria{
     public int $id_categoria;
