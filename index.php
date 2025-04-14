@@ -1,5 +1,5 @@
 <?php
-require './App/Entity/Colaboradores.php';
+require './App/Entity/Categoria.php';
 
 if(isset($_POST['cadastrar'])){
     
@@ -52,7 +52,6 @@ if(isset($_POST['cadastrar'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    
 </head>
 <body>
 
@@ -60,10 +59,19 @@ if(isset($_POST['cadastrar'])){
         <h1 id="titulo">Cadastro de colaboradores</h1>
     </div>
 
-    <div id="ibge">
-        <button id="buscar" class="btn_buscar">Buscar Dados</button>
-        <br><br>
+    <div class="container">
+
+            <div id="ibge">
+                <button id="buscar" class="btn_buscar">Buscar Dados</button>
+                <br><br>
+            </div>
+
+            <div id="ibge">
+                <button id="categoria" class="btn_cad">Cadastrar Categoria</button>
+                <br><br>
+            </div>
     </div>
+    
     
 
     <form id="formulario" method="POST" enctype='multipart/form-data'>
@@ -97,9 +105,12 @@ if(isset($_POST['cadastrar'])){
             <button type="submit">OK</button>
             </section>    
         </form>
-    </dialog>        
+    </dialog>
+    
+    <?php include './modal_categoria.html';?>
+
     <!-- <script src="./js/script.js"></script> -->
     <!-- <script src="./js/script2.js"></script> -->
-    <script src="./js/sextou2.js"></script>
+    <script src="./js/segundou.js"></script>
 </body>
 </html>

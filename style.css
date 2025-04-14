@@ -1,15 +1,31 @@
+.container{
+    display:flex;
+    width: 50%;
+    justify-content: space-between;
+}
+
+.form_categoria{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    top: 50%;
+    /* left: 50%; */
+}
+#minhadiv{
+    background-color: pink;
+}
 #form_modal{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-
 .oculta{
-    visibility: hidden;
+visibility: hidden;
 }
-
 .chama{
     visibility: visible;
-    background-color: red;
+    background-color: grey;
 }
